@@ -15,13 +15,13 @@
     <meta property="og:title" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
     <meta property="og:description" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
     <meta property="og:image" content="https://jobie.dexignzone.com/mobile-app/xhtml/social-image.png" />
-    <meta name="format-detection" content="telephone=no">
-    
+    <meta name="format-detection" content="telephone= yes">
+
     <!-- Favicons Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 
     <!-- Title -->
-    <title>GoGami Home</title>
+    <title>Sporza Home</title>
 
     <!-- PWA Version -->
     <link rel="manifest" href="manifest.json">
@@ -299,7 +299,7 @@
             <div class="container inner-wrapper">
                 <div class="dz-info">
                     <span id="welcome-2">Good Morning</span>
-                    <h2 class="name mb-0">GoGami By Andrep13_</h2>
+                    <h2 class="name mb-0">Sporza By Andrep13_</h2>
                 </div>
                 <div class="dz-media media-45 rounded-circle">
                     <a href="profile.html"><img src="/assets/images/logo app/GoGami.png" class="rounded-circle"
@@ -326,7 +326,7 @@
                                     </svg>
                                 </a>
                             </span>
-                            <input type="text" placeholder="Search game here..." class="form-control ps-0 bs-0">
+                            <input type="text" id="myInput" placeholder="Search game here..." class="form-control ps-0 bs-0">
                         </div>
                     </form>
 
@@ -346,8 +346,8 @@
                                                     fill="white" />
                                             </svg>
                                             <div class="card-info">
-                                                <h4 class="title">0</h4>
-                                                <p>GoGami Games</p>
+                                                <h4 class="title" id="total">0</h4>
+                                                <p>Sporza Games</p>
                                             </div>
                                         </div>
                                     </div>
@@ -509,7 +509,7 @@
                                                 <div class="card-body">
                                                     <div class="media media-80">
                                                         <a href="/details/2048/" class="item-media">
-                                                            <img src="/assets/images/logo app/GoGami.png" class="thumbnail" alt="GoGami"></a>
+                                                            <img src="/assets/images/games/2048/Sporza.jpeg" class="thumbnail" alt="GoGami"></a>
                                                     </div>
                                                     <div class="card-info">
                                                         <h6 class="title"><a href="/details/2048/">2048</a></h6>
@@ -540,7 +540,7 @@
                                 <li>
                                     <div class="item-content">
                                         <a href="/details/2048/" class="item-media">
-                                            <img src="/assets/images/logo app/GoGami.png" class="thumbnail"
+                                            <img src="/assets/images/games/2048/Sporza.jpeg" class="thumbnail"
                                                 alt="GoGami"></a>
                                         <div class="item-inner">
                                             <div class="item-title-row">
@@ -669,16 +669,33 @@
     <!-- Menubar -->
     
     <!-- Script -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/dz.carousel.js"></script><!-- Swiper -->
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
-    <script src="assets/js/settings.js"></script>
-    <script src="assets/js/custom.js"></script>
-    <script src="index.js" defer></script>
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
+    <script src="/assets/js/count/total-game/main.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
+    <script src="/assets/js/settings.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <script src="/index.js" defer></script>
 
     <script src="/assets/js/default/footer/index.js"></script>
 
+    <script>
+        $(document).ready(function () {
+			$("#myInput").on("keyup", function () {
+				var value = $(this).val().toLowerCase();
+				$(".recent-jobs-list li").filter(function () {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+
+		function handleTagRemove() {
+			$('.remove-tag').on('click', function () {
+				$(this).parent().remove();
+			})
+		}
+    </script>
 </body>
 
 </html>

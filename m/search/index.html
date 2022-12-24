@@ -287,7 +287,7 @@
 					<div class="filter-area">
 						<div>
 							<h5>Available</h5>
-							<span>2 Games founded</span>
+							<span><span id="total"></span> Games founded</span>
 						</div>
 					</div>
 					<div class="list item-list recent-jobs-list">
@@ -296,7 +296,7 @@
 							<li>
 								<div class="item-content">
 									<a href="/details/2048/" class="item-media"><img
-											src="/assets/images/logo app/GoGami.png" class="thumbnail" alt="logo"></a>
+											src="/assets/images/games/2048/Sporza.jpeg" class="thumbnail" alt="logo"></a>
 									<div class="item-inner">
 										<div class="item-title-row">
 											<div class="item-subtitle">GoGami</div>
@@ -406,8 +406,13 @@
 		<div class="container">
 			<div class="offcanvas-header">
 				<h5 class="offcanvas-title" id="offcanvasBottomLabel">Search Games</h5>
-				<button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-						class="ax-clear"></i></button>
+				<button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
+                            fill="#323232" />
+                    </svg>
+				</button>
 			</div>
 			<div class="offcanvas-body small">
 				<div class="d-flex flex-wrap">
@@ -420,14 +425,21 @@
 		</div>
 	</div>
 
+	<!-- Menubar -->
+    <script id="search"></script>
+    <!-- Menubar -->
+
 	<!-- Script -->
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
+	<script src="/assets/js/count/total-game/main.js"></script>
 	<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
 	<script src="/assets/js/settings.js"></script>
 	<script src="/assets/js/custom.js"></script>
 
+	<script src="/assets/js/default/footer/index.js"></script>
+	
 	<script>
 
 		$(document).ready(function () {
