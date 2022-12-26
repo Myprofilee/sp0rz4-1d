@@ -18,14 +18,13 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- Favicons Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png" />
 
 	<!-- Title -->
-	<title>Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )</title>
+	<title>Sporza Arcade</title>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" href="/assets/vendor/imageuplodify/imageuploadify.min.css">
 	<link rel="stylesheet" href="/assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
@@ -62,25 +61,17 @@
 							</a>
 						</div>
 						<div class="mid-content">
-							<h5 class="mb-0">Sporza</h5>
+							<h5 class="mb-0">Arcade</h5>
 						</div>
 						<div class="right-content">
-							<a class="menu-toggler" for="flexCheckDefault1" href="javascript:void(0);"
-                            class="item-content item-link" data-bs-toggle="offcanvas" data-bs-target="#report-sporza"
-                            aria-controls="report-sporza">
+							<a href="javascript:void(0);" class="item-content item-link" data-bs-toggle="offcanvas"
+								data-bs-target="#offcanvasBottom1" aria-controls="offcanvasBottom1">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_0_5588)">
-                                        <path
-                                            d="M14 9L13 7H7V5.72C7.6 5.38 8 4.74 8 4C8 2.9 7.1 2 6 2C4.9 2 4 2.9 4 4C4 4.74 4.4 5.38 5 5.72V21H7V17H12L13 19H20V9H14ZM18 17H14L13 15H7V9H12L13 11H18V17Z"
-                                            fill="#323232" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_0_5588">
-                                            <rect width="24" height="24" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M19.5 16.7076L21.4217 18.6292C22.1928 19.4004 22.1928 20.6506 21.4217 21.4217C20.6506 22.1928 19.4004 22.1928 18.6293 21.4217L16.7076 19.5M2 10.5C2 5.80558 5.80558 2 10.5 2C15.1944 2 19 5.80558 19 10.5C19 15.1944 15.1944 19 10.5 19C5.80558 19 2 15.1944 2 10.5Z"
+										stroke="#28303F" stroke-width="1.5" stroke-linecap="round" />
+								</svg>
 							</a>
 						</div>
 					</div>
@@ -92,11 +83,39 @@
 		<!-- Page Content -->
 		<div class="page-content">
 			<div class="container">
-				<!-- Page Content -->
-				<div class="page-content bottom-content ">
-					<iframe src="sporza/" frameborder="0" height="100%" width="100%"></iframe>
+				<div class="serach-area">
+					<div class="filter-area">
+						<div>
+							<h5>Available</h5>
+							<span><span class="arcade"></span> Games founded</span>
+						</div>
+					</div>
+					<div class="list item-list recent-jobs-list">
+						<ul>
+							
+							<!-- Games --
+							<li>
+								<div class="item-content">
+									<a href="/details/2048/" class="item-media"><img
+											src="/assets/images/games/2048/Sporza.jpeg" class="thumbnail" alt="logo"></a>
+									<div class="item-inner">
+										<div class="item-title-row">
+											<div class="item-subtitle">Sporza</div>
+											<h6 class="item-title"><a href="/details/2048/">2048</a></h6>
+										</div>
+										<div class="d-flex align-items-center">
+											<div class="item-price">Jum, 23 Des 2022</div>
+										</div>
+									</div>
+								</div>
+								<div class="sortable-handler"></div>
+							</li>
+							<!-- Games -->
+							
+						</ul>
+					</div>
+					<!-- Job List -->
 				</div>
-				<!-- Page Content End-->
 			</div>
 		</div>
 		<!-- Page Content End-->
@@ -183,51 +202,51 @@
 		<!-- Theme Color Settings End -->
 	</div>
 
-	<!-- Report Model -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="report-sporza">
-        <div class="container">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Report</h5>
-                <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- Thumbs -->
+	<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom1">
+		<div class="container">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasBottomLabel">Search Games</h5>
+				<button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
                             fill="#323232" />
                     </svg>
-                </button>
-            </div>
-            <div class="offcanvas-body small">
-                <div class="mb-3 form-input">
-                    <form>
-                        <div class="mb-3">
-                            <textarea class="form-control" placeholder="Tuliskan Masalah Yang Terjadi Disini..."></textarea>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="file" class="imageuplodify" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
-                        </div>
-                        <a href="javascript:void(0);" class="btn btn-secondary mt-3 btn-rounded btn-block">Send</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Report Model -->
+				</button>
+			</div>
+			<div class="offcanvas-body small">
+				<div class="d-flex flex-wrap">
+					<div class="input-group search-input">
+						<input type="text" id="myInput" placeholder="Search games here..."
+							class="form-control style-1 main-in">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<!--**********************************
-    Scripts
-***********************************-->
+	<!-- Script -->
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
+	<script src="/assets/js/count/total-game/main.js"></script>
+	<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
 	<script src="/assets/js/settings.js"></script>
 	<script src="/assets/js/custom.js"></script>
-	<script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
-	<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
-	<script src="/assets/vendor/imageuplodify/imageuploadify.min.js"></script>
 
+	<script src="/assets/js/default/footer/index.js"></script>
+	
 	<script>
-		$(document).ready(function() {
-            $('input[type="file"]').imageuploadify();
-        })
+
+		$(document).ready(function () {
+			$("#myInput").on("keyup", function () {
+				var value = $(this).val().toLowerCase();
+				$(".recent-jobs-list li").filter(function () {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
 
 		function handleTagRemove() {
 			$('.remove-tag').on('click', function () {

@@ -1,1 +1,4 @@
-document.getElementById("total").innerHTML = "1";
+$(".total").html("2");
+
+/* Arcade */
+$(".arcade").html("0");
