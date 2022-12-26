@@ -589,6 +589,18 @@ legend+* {
   -webkit-appearance: button;
 }
 
+  /*# Icon White And Darkmode */
+
+  svg {
+    fill: white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    svg {
+      fill: white;
+    }
+  }
+
 output {
   display: inline-block;
 }
@@ -14934,7 +14946,7 @@ iframe {
   }
 
   .header .menu-toggler {
-    font-size: 20px;
+    font-size: S0px;
     color: var(--title);
     display: flex;
     align-items: center;
@@ -15303,6 +15315,7 @@ iframe {
     line-height: 20px;
   }
 
+  /* menu-toggler *
   .menu-toggler {
     position: relative;
   }
@@ -15320,6 +15333,7 @@ iframe {
     transition: all 0.5s;
     z-index: 99999;
   }
+  /* menu-toggler */
 
   .footer {
     height: auto;
@@ -15417,17 +15431,6 @@ iframe {
     fill: var(--primary);
   }
 
-  /*# Icon White And Darkmode */
-
-  svg {
-    fill: black;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    svg {
-      fill: white;
-    }
-  }
 
   .message-icon {
     display: none;
@@ -16348,7 +16351,7 @@ iframe {
     color: #7e7e7e;
     transition: all 0.3s ease-in-out;
     background: #fff;
-    border-radius: 45px;
+    border-radius: 10px;
   }
 
   .form-control .select {

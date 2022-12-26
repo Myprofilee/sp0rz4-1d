@@ -24,3 +24,12 @@ fetch('/assets/menu/search/')
     newelem.innerHTML = text;
     oldelem.parentNode.replaceChild(newelem,oldelem);
 })
+
+fetch('/assets/menu/settings/')
+.then(res => res.text())
+.then(text => {
+    let oldelem = document.querySelector("script#settings");
+    let newelem = document.createElement("div");
+    newelem.innerHTML = text;
+    oldelem.parentNode.replaceChild(newelem,oldelem);
+})
