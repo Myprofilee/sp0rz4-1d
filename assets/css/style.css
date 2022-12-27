@@ -183,6 +183,18 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/*# Icon White And Darkmode */
+
+svg {
+  fill: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  svg {
+    fill: white;
+  }
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -588,18 +600,6 @@ legend+* {
   font: inherit;
   -webkit-appearance: button;
 }
-
-  /*# Icon White And Darkmode */
-
-  svg {
-    fill: white;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    svg {
-      fill: white;
-    }
-  }
 
 output {
   display: inline-block;

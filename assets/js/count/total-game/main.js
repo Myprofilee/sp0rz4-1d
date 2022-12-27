@@ -1,4 +1,4 @@
-$(".total").html("2");
+$("#total").html("2");
 
 /* Arcade */
-$(".arcade").html("0");
+$("#arcade").html("1");
