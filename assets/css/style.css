@@ -12419,7 +12419,7 @@ iframe {
 
 @media(prefers-color-scheme:dark) {
   iframe {
-    padding-top: 50px;
+    padding-top: 55px;
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: hidden;
