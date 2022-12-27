@@ -35,11 +35,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 		rel="stylesheet">
 
-		<style>
-			.link {
-				opacity: 0;
-			}
-		</style>
 </head>
 
 <body class="bg-white">
@@ -207,12 +202,8 @@
 						<div class="alert alert-primary solid alert-dismissible fade show">Your message sent</div>
 
 						<div class="mb-3">
-							<input class="form-control link" id="link" readonly></input>
-						</div>
-
-						<div class="mb-3">
 							<select class="form-control" id="error" required>
-								<option value="" selected disabled hidden id="link">Masalah Yang Terjadi</option>
+								<option value="" selected disabled hidden>Masalah Yang Terjadi</option>
 								<option>Game Tidak Dapat Dimainkan</option>
 								<option>Tidak Dapat Di Play/Start</option>
 							</select>
@@ -266,11 +257,10 @@ document.getElementById("report").addEventListener("submit", submitForm);
 function submitForm(e) {
   e.preventDefault();
 
-  var link = getElementVal("link");
   var error = getElementVal("error");
   var text = getElementVal("text");
 
-  saveMessages(link, error, text);
+  saveMessages(error, text);
 
   //   enable alert
   document.querySelector(".alert").style.display = "block";
@@ -284,20 +274,14 @@ function submitForm(e) {
   document.getElementById("report").reset();
 }
 
-const saveMessages = (link, error, text) => {
+const saveMessages = (error, text) => {
   var newreport = reportDB.push();
 
   newreport.set({
-	link: link,
     error: error,
     text: text,
   });
 };
-
-$(document).ready(function () {
-    $('#link').val(window.location);
-});
-
 
 const getElementVal = (id) => {
   return document.getElementById(id).value;
