@@ -8,20 +8,12 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
 	<meta name="theme-color" content="#2196f3">
-	<meta name="author" content="DexignZone" />
-	<meta name="keywords" content="" />
-	<meta name="robots" content="" />
-	<meta name="description" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
-	<meta property="og:title" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
-	<meta property="og:description" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
-	<meta property="og:image" content="https://jobie.dexignzone.com/mobile-app/xhtml/social-image.png" />
-	<meta name="format-detection" content="telephone=no">
 
 	<!-- Favicons Icon -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 
 	<!-- Title -->
-	<title>Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )</title>
+	<title>Sporza Plays</title>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
@@ -64,24 +56,16 @@
 						<div class="mid-content">
 							<h5 class="mb-0">Sporza</h5>
 						</div>
+
 						<div class="right-content">
-							<a class="menu-toggler" for="flexCheckDefault1" href="javascript:void(0);"
-                            class="item-content item-link" data-bs-toggle="offcanvas" data-bs-target="#report-sporza"
-                            aria-controls="report-sporza">
+							<a class="item-content item-link" href="/m/report/" class="item-content item-link">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_0_5588)">
-                                        <path
-                                            d="M14 9L13 7H7V5.72C7.6 5.38 8 4.74 8 4C8 2.9 7.1 2 6 2C4.9 2 4 2.9 4 4C4 4.74 4.4 5.38 5 5.72V21H7V17H12L13 19H20V9H14ZM18 17H14L13 15H7V9H12L13 11H18V17Z"
-                                            fill="#323232" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_0_5588">
-                                            <rect width="24" height="24" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-							</a>
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M6 14.4623H16.1909C17.6066 14.4623 18.472 12.7739 17.7261 11.4671L17.2365 10.6092C16.7547 9.76504 16.7547 8.69728 17.2365 7.85309L17.7261 6.99524C18.472 5.68842 17.6066 4 16.1909 4L6 4L6 14.4623ZM6 14.4623L6 20"
+										stroke="#363853" stroke-width="1.5" stroke-linecap="round"
+										stroke-linejoin="round" />
+								</svg>
 						</div>
 					</div>
 				</div>
@@ -94,7 +78,9 @@
 			<div class="container">
 				<!-- Page Content -->
 				<div class="page-content bottom-content ">
-					<iframe src="/plays/2048/" frameborder="0" height="100%" width="100%"></iframe>
+					<iframe
+						src="https://html5.gamedistribution.com/2cf3c28d46944b7dabd92c04b4114f5e/?gd_sdk_referrer_url=https://gamedistribution.com/games/tap-dunk-basketball"
+						frameborder="0" height="100%" width="100%"></iframe>
 				</div>
 				<!-- Page Content End-->
 			</div>
@@ -183,39 +169,7 @@
 		<!-- Theme Color Settings End -->
 	</div>
 
-	<!-- Report Model -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="report-sporza">
-        <div class="container">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Report</h5>
-                <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
-                            fill="#323232" />
-                    </svg>
-                </button>
-            </div>
-            <div class="offcanvas-body small">
-                <div class="mb-3 form-input">
-                    <form>
-                        <div class="mb-3">
-                            <textarea class="form-control" placeholder="Tuliskan Masalah Yang Terjadi Disini..."></textarea>
-                        </div>
-                        <div class="input-group mb-3">
-                            <input type="file" class="imageuplodify" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
-                        </div>
-                        <a href="javascript:void(0);" class="btn btn-secondary mt-3 btn-rounded btn-block">Send</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Report Model -->
-
-	<!--**********************************
-    Scripts
-***********************************-->
+	<!-- Script -->
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="/assets/js/settings.js"></script>
@@ -225,9 +179,10 @@
 	<script src="/assets/vendor/imageuplodify/imageuploadify.min.js"></script>
 
 	<script>
-		$(document).ready(function() {
-            $('input[type="file"]').imageuploadify();
-        })
+
+		$(document).ready(function () {
+			$('input[type="file"]').imageuploadify();
+		})
 
 		function handleTagRemove() {
 			$('.remove-tag').on('click', function () {

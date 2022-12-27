@@ -12403,7 +12403,7 @@ body {
 }
 
 iframe {
-  padding-top: 50px;
+  padding-top: 0px;
   overflow: hidden;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -20634,6 +20634,10 @@ iframe {
     margin: 0;
     font-size: 16px;
     font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 170px;
   }
 
   .recent-jobs-list ul li .item-content .item-inner .item-title-row .bookmark-btn {
