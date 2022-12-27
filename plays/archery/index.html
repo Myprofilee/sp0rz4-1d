@@ -18,13 +18,14 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- Favicons Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
 
 	<!-- Title -->
-	<title>GoGami Search</title>
+	<title>Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )</title>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/assets/vendor/imageuplodify/imageuploadify.min.css">
 	<link rel="stylesheet" href="/assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
@@ -34,6 +35,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 		rel="stylesheet">
 
+		<style>
+			.link {
+				opacity: 0;
+			}
+		</style>
 </head>
 
 <body class="bg-white">
@@ -61,17 +67,25 @@
 							</a>
 						</div>
 						<div class="mid-content">
-							<h5 class="mb-0">Search</h5>
+							<h5 class="mb-0">Sporza</h5>
 						</div>
 						<div class="right-content">
-							<a href="javascript:void(0);" class="item-content item-link" data-bs-toggle="offcanvas"
-								data-bs-target="#offcanvasBottom1" aria-controls="offcanvasBottom1">
+							<a class="menu-toggler" for="flexCheckDefault1" href="javascript:void(0);"
+                            class="item-content item-link" data-bs-toggle="offcanvas" data-bs-target="#report-sporza"
+                            aria-controls="report-sporza">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M19.5 16.7076L21.4217 18.6292C22.1928 19.4004 22.1928 20.6506 21.4217 21.4217C20.6506 22.1928 19.4004 22.1928 18.6293 21.4217L16.7076 19.5M2 10.5C2 5.80558 5.80558 2 10.5 2C15.1944 2 19 5.80558 19 10.5C19 15.1944 15.1944 19 10.5 19C5.80558 19 2 15.1944 2 10.5Z"
-										stroke="#28303F" stroke-width="1.5" stroke-linecap="round" />
-								</svg>
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_5588)">
+                                        <path
+                                            d="M14 9L13 7H7V5.72C7.6 5.38 8 4.74 8 4C8 2.9 7.1 2 6 2C4.9 2 4 2.9 4 4C4 4.74 4.4 5.38 5 5.72V21H7V17H12L13 19H20V9H14ZM18 17H14L13 15H7V9H12L13 11H18V17Z"
+                                            fill="#323232" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_0_5588">
+                                            <rect width="24" height="24" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
 							</a>
 						</div>
 					</div>
@@ -83,102 +97,11 @@
 		<!-- Page Content -->
 		<div class="page-content">
 			<div class="container">
-				<div class="serach-area">
-					<!-- Swiper Slider Full -->
-					<div class="m-t20 m-b30">
-						<div class="title-bar">
-							<h5 class="dz-title">Event</h5>
-							<div class=" p-0"></div>
-						</div>
-						<div class="swiper-btn-center-lr">
-							<div class="swiper-container tag-group swiper-slider-full">
-								<div class="swiper-wrapper">
-
-									<!-- Slider --
-									<div class="swiper-slide">
-										<div class="card job-post">
-											<img src="/assets/images/Dark Purple Modern Gaming Banner Landscape.png" alt="/">
-										</div>       
-									</div>
-									<!-- Slider -->
-
-								</div>
-							</div>
-							<div class="swiper-full-pagination pagination-dots style-1 text-left p-0"></div>
-						</div>
-					</div>
-					<!-- Swiper Slider Full -->
-
-					<div class="filter-area">
-						<div>
-							<h5>Available</h5>
-							<span><span id="total"></span> Games founded</span>
-						</div>
-					</div>
-					<div class="list item-list recent-jobs-list">
-						<ul>
-
-							<!-- Games -->
-							<li>
-								<div class="item-content" onclick="location.href='/details/archery/';">
-									<a href="/details/archery/" class="item-media"><img
-											src="/assets/images/games/archery/sporza.png" class="thumbnail" alt="logo"></a>
-									<div class="item-inner">
-										<div class="item-title-row">
-											<div class="item-subtitle">Sporza</div>
-											<h6 class="item-title"><a href="/details/archery/">Archery</a></h6>
-										</div>
-										<div class="d-flex align-items-center">
-											<div class="item-price">Sel, 27 Des 2022</div>
-										</div>
-									</div>
-								</div>
-								<div class="sortable-handler"></div>
-							</li>
-							<!-- Games -->
-
-							<!-- Games -->
-							<li>
-								<div class="item-content">
-									<a href="/details/tower-sporza/" class="item-media"><img
-											src="/assets/images/games/tower-sporza/sporza.png" class="thumbnail" alt="logo"></a>
-									<div class="item-inner">
-										<div class="item-title-row">
-											<div class="item-subtitle">Sporza</div>
-											<h6 class="item-title"><a href="/details/tower-sporza/">Tower Sporza</a></h6>
-										</div>
-										<div class="d-flex align-items-center">
-											<div class="item-price">Min, 25 Des 2022</div>
-										</div>
-									</div>
-								</div>
-								<div class="sortable-handler"></div>
-							</li>
-							<!-- Games -->
-							
-							<!-- Games -->
-							<li>
-								<div class="item-content">
-									<a href="/details/2048/" class="item-media"><img
-											src="/assets/images/games/2048/Sporza.jpeg" class="thumbnail" alt="logo"></a>
-									<div class="item-inner">
-										<div class="item-title-row">
-											<div class="item-subtitle">Sporza</div>
-											<h6 class="item-title"><a href="/details/2048/">2048</a></h6>
-										</div>
-										<div class="d-flex align-items-center">
-											<div class="item-price">Jum, 23 Des 2022</div>
-										</div>
-									</div>
-								</div>
-								<div class="sortable-handler"></div>
-							</li>
-							<!-- Games -->
-							
-						</ul>
-					</div>
-					<!-- Job List -->
+				<!-- Page Content -->
+				<div class="page-content bottom-content ">
+					<iframe src="https://html5.gamedistribution.com/0cfb140bc86741528fd8e6a5cc96f8a1/?gd_sdk_referrer_url=https://gamedistribution.com/games/archery-2" frameborder="0" height="100%" width="100%"></iframe>
 				</div>
+				<!-- Page Content End-->
 			</div>
 		</div>
 		<!-- Page Content End-->
@@ -265,51 +188,125 @@
 		<!-- Theme Color Settings End -->
 	</div>
 
-	<!-- Thumbs -->
-	<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom1">
-		<div class="container">
-			<div class="offcanvas-header">
-				<h5 class="offcanvas-title" id="offcanvasBottomLabel">Search Games</h5>
-				<button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<!-- Report Model -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="report-sporza">
+        <div class="container">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Report</h5>
+                <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z"
                             fill="#323232" />
                     </svg>
-				</button>
-			</div>
-			<div class="offcanvas-body small">
-				<div class="d-flex flex-wrap">
-					<div class="input-group search-input">
-						<input type="text" id="myInput" placeholder="Search games here..."
-							class="form-control style-1 main-in">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                </button>
+            </div>
+            <div class="offcanvas-body small">
+                <div class="mb-3 form-input">
+                    <form action="" id="report">
+						<div class="alert alert-primary solid alert-dismissible fade show">Your message sent</div>
 
-	<!-- Script -->
+						<div class="mb-3">
+							<input class="form-control link" id="link" readonly disabled style="visibility: hidden;"></input>
+						</div>
+
+						<div class="mb-3">
+							<select class="form-control" id="error" required>
+								<option value="" selected disabled hidden id="link">Masalah Yang Terjadi</option>
+								<option>Game Tidak Dapat Dimainkan</option>
+								<option>Tidak Dapat Di Play/Start</option>
+							</select>
+						</div>
+						
+                        <div class="mb-3">
+                            <textarea class="form-control" id="text" placeholder="Tuliskan Masalah Yang Terjadi Disini..." required></textarea>
+                        </div>
+
+                        <button class="btn btn-secondary mt-3 btn-rounded btn-block btn" type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Report Model -->
+
+	<!--**********************************
+    Scripts
+***********************************-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
-	<script src="/assets/js/count/total-game/main.js"></script>
-	<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
 	<script src="/assets/js/settings.js"></script>
 	<script src="/assets/js/custom.js"></script>
+	<script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
+	<script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
+	<script src="/assets/vendor/imageuplodify/imageuploadify.min.js"></script>
 
-	<script src="/assets/js/default/footer/index.js"></script>
-	
 	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyD0C2MlAYzNN7IDtlq5x7gfnefzxaVpxnY",
+  authDomain: "sporza-id.firebaseapp.com",
+  databaseURL: "https://sporza-id-default-rtdb.firebaseio.com",
+  projectId: "sporza-id",
+  storageBucket: "sporza-id.appspot.com",
+  messagingSenderId: "958457231239",
+  appId: "1:958457231239:web:1d346d5c2fa4b60df3c522",
+  measurementId: "G-5MR6BNZLHN"
+};
 
-		$(document).ready(function () {
-			$("#myInput").on("keyup", function () {
-				var value = $(this).val().toLowerCase();
-				$(".recent-jobs-list li").filter(function () {
-					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-				});
-			});
-		});
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
+
+// reference your database
+var reportDB = firebase.database().ref("report");
+
+document.getElementById("report").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var link = getElementVal("link");
+  var error = getElementVal("error");
+  var text = getElementVal("text");
+
+  saveMessages(link, error, text);
+
+  //   enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  //   remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  //   reset the form
+  document.getElementById("report").reset();
+}
+
+const saveMessages = (link, error, text) => {
+  var newreport = reportDB.push();
+
+  newreport.set({
+	link: link,
+    error: error,
+    text: text,
+  });
+};
+
+$(document).ready(function () {
+    $('#link').val(window.location);
+});
+
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
+
+
+		$(document).ready(function() {
+            $('input[type="file"]').imageuploadify();
+        })
 
 		function handleTagRemove() {
 			$('.remove-tag').on('click', function () {
