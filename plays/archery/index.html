@@ -58,7 +58,7 @@
 						</div>
 
 						<div class="right-content">
-							<a class="item-content item-link" href="/m/report/" class="item-content item-link">
+							<a href="javascript:void(0);" class="item-content item-link" data-bs-toggle="offcanvas" data-bs-target="#report-games" aria-controls="report-games">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
 									xmlns="http://www.w3.org/2000/svg">
 									<path
@@ -162,7 +162,56 @@
 		<!-- Theme Color Settings End -->
 	</div>
 
+	<div class="offcanvas offcanvas-bottom" tabindex="-1" id="report-games">
+		<div class="container">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasBottomLabel">Report</h5>
+				<button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+					<svg fill="#000000" width="24" height="24" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+						<g>
+							<polygon
+								points="13.63 3.65 12.35 2.38 8 6.73 3.64 2.38 2.37 3.65 6.72 8.01 2.38 12.35 3.65 13.63 8 9.28 12.35 13.64 13.63 12.36 9.27 8.01 13.63 3.65" />
+						</g>
+					</svg>
+				</button>
+			</div>
+			<div class="offcanvas-body small">
+				<form class="my-2" action="" id="report">
+
+                    <div class="alert alert-primary solid alert-dismissible fade show">Your message sent</div>
+
+                    <div class="mb-3">
+                        <select class="form-control" id="error" required>
+                            <option value="" selected disabled hidden>Masalah Yang Terjadi</option>
+                            <option>Tidak Dapat Di Play/Start</option>
+                            <option>Game Tidak Dapat Dimainkan</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="text" class="form-control" placeholder="Tuliskan Masalah Yang Terjadi Disini..."
+                            required></textarea>
+                    </div>
+
+					<div class="input-group">
+                        <input id="link" class="form-control" style="opacity: 0;"></input>
+                    </div>
+
+					<!-- Footer -->
+                    <footer class="footer fixed">
+                        <div class="container">
+                            <button class="btn btn-primary w-100 btn-rounded" type="submit">Send Report</button>
+                        </div>
+                    </footer>
+                    <!-- Footer End -->
+                </form>
+			</div>
+		</div>
+	</div>
+
 	<!-- Script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+	<script src="/assets/js/report.js"></script>
 	<script src="/assets/js/jquery.js"></script>
 	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="/assets/js/settings.js"></script>
@@ -172,6 +221,9 @@
 	<script src="/assets/vendor/imageuplodify/imageuploadify.min.js"></script>
 
 	<script>
+		$(document).ready(function () {
+    $('#link').val(window.location);
+});
 
 		$(document).ready(function () {
 			$('input[type="file"]').imageuploadify();

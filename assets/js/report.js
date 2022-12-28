@@ -20,11 +20,11 @@ document.getElementById("report").addEventListener("submit", submitForm);
 function submitForm(e) {
     e.preventDefault();
 
-    var game = getElementVal("game");
     var error = getElementVal("error");
     var text = getElementVal("text");
+    var link = getElementVal("link");
 
-    saveMessages(game, error, text);
+    saveMessages(error, text, link);
 
     //   enable alert
     document.querySelector(".alert").style.display = "block";
@@ -38,13 +38,13 @@ function submitForm(e) {
     document.getElementById("report").reset();
 }
 
-const saveMessages = (game, error, text) => {
+const saveMessages = (error, text, link) => {
     var newreport = reportDB.push();
 
     newreport.set({
-        game: game,
         error: error,
         text: text,
+        link: link,
     });
 };
 
