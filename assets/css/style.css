@@ -16085,13 +16085,13 @@ iframe {
   }
 
   .theme-color-settings li label:after {
-    content: "\f00c";
+    content: "\e90f";
     position: absolute;
     top: 50%;
     left: 50%;
     display: none;
     transform: translate(-50%, -50%);
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'axcon' !important;
     font-weight: 900;
     font-size: 16px;
     color: #fff;

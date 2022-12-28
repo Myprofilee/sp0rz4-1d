@@ -8,23 +8,16 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui, viewport-fit=cover">
     <meta name="theme-color" content="#2196f3">
-    <meta name="author" content="DexignZone" />
-    <meta name="keywords" content="" />
-    <meta name="robots" content="" />
-    <meta name="description" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
-    <meta property="og:title" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
-    <meta property="og:description" content="Jobie - Job Portal Mobile App Template ( Bootstrap 5 + PWA )" />
-    <meta property="og:image" content="https://jobie.dexignzone.com/mobile-app/xhtml/social-image.png" />
-    <meta name="format-detection" content="telephone=no">
 
     <!-- Favicons Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png" />
 
     <!-- Title -->
-    <title>GoGami Notification</title>
+    <title>Sporza Settings</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/axcon/axcon.css">
     <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
 
     <!-- Google Fonts -->
@@ -79,7 +72,7 @@
                 <div class="notification-content">
 
                     <!-- Profile -->
-                    <a href="">
+                    <a >
                         <div class="notification">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
@@ -98,8 +91,8 @@
                     <h6 class="title">Theme</h6>
 
                     <!-- Highlights Mode -->
-                    <div class="notification" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
-                    aria-controls="offcanvasBottom">
+                    <div class="notification" href="javascript:void(0);" class="theme-color" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                         <div class="mode">
                             <span class="dz-icon bg-green light">
                                 <svg class="color-plate" enable-background="new 0 0 512.214 512.214" height="24"
@@ -305,10 +298,13 @@
     <!-- Script -->
     <script src="/assets/js/jquery.js"></script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
+    <script src="/assets/js/count/total-game/main.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
     <script src="/assets/js/settings.js"></script>
     <script src="/assets/js/custom.js"></script>
-    <script src="/assets/js/dz.carousel.js"></script><!-- Swiper -->
-    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script><!-- Swiper -->
+    <script src="/index.js" defer></script>
+
     <script src="/assets/js/default/footer/index.js"></script>
 
     <script>
@@ -317,20 +313,18 @@
             $(this).addClass("active");
         })
 
-        var mySiteNamespace = {}
- 
-mySiteNamespace.switchLanguage = function (lang) {
-    $.cookie('language', lang);
-    window.location.reload();
-}
- 
-$(document).ready(function () {
-    // attach mySiteNamespace.switchLanguage to click events based on css classes
-    $('.lang-english').click(function () { mySiteNamespace.switchLanguage('en'); });
-    $('.lang-french').click(function () { mySiteNamespace.switchLanguage('fr'); });
-    $('.lang-arabic').click(function () { mySiteNamespace.switchLanguage('ar'); });
-    $('.lang-spanish').click(function () { mySiteNamespace.switchLanguage('es'); });
-});
+        function handleTagRemove() {
+            $('.remove-tag').on('click', function () {
+                $(this).parent().remove();
+            })
+        }
+
+        window.addEventListener("load", () => {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("service-worker.js");
+            }
+        });
+
     </script>
 </body>
 
