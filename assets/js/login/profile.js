@@ -14,7 +14,7 @@ var firebaseConfig = {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       document.getElementById("img").innerHTML = `
-            <img src="${user.photoURL}" style="border-radius: 50px; width: 50px;">
+            <img src="${user.photoURL}" style="border-radius: 50px;">
         `;
       document.getElementById("username").innerHTML = `
             ${user.displayName}

@@ -22,11 +22,11 @@ var sign_out = document.querySelector("#signOut");
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         if (window.location.pathname != '/') {
-            window.location = '/';
+            window.location = window.history.go(-1);
         }
     } else {
         if (window.location.pathname === '/') {
-            window.location = '/';
+            window.location = window.history.go(-1);
         }
     }
 });
@@ -40,7 +40,7 @@ if (form) {
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                window.location = '/';
+                window.location = window.history.go(-1);
             })
             .catch((error) => {
                 message.style.display = 'block';
@@ -61,7 +61,7 @@ if (r_form) {
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                window.location = '/';
+                window.location = window.history.go(-1);
             })
             .catch((error) => {
                 message.style.display = 'block';
@@ -101,7 +101,7 @@ var login = document.querySelector('.login');
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // console.log(user);
-        window.location = '/';
+        window.location = window.history.go(-1);
     }
 });
 
@@ -119,7 +119,7 @@ login.addEventListener('click', (e) => {
 if (sign_out) {
     sign_out.addEventListener('click', function (e) {
         firebase.auth().signOut().then(() => {
-            window.location = '/';
+            window.location = window.history.go(-1);
         }).catch((error) => {
             // An error happened.
         });

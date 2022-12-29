@@ -21682,3 +21682,8 @@ iframe {
       transform: rotate(360deg);
     }
   }
+
+  .settings-profile {
+    border-radius: 10px;
+    width: 50px;
+  }
