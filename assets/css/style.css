@@ -189,11 +189,6 @@ svg {
   fill: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  svg {
-    fill: white;
-  }
-}
 
 hr {
   margin: 1rem 0;
