@@ -1,5 +1,4 @@
-// Your web app's Firebase configuration ENTER YOUR FIREBASE DETAILS HERE
-
+// Your web app's Firebase configuration (ENTER YOUR FIREBASE DETAILS HERE)
 var firebaseConfig = {
     apiKey: "AIzaSyD0C2MlAYzNN7IDtlq5x7gfnefzxaVpxnY",
     authDomain: "sporza-id.firebaseapp.com",
@@ -7,101 +6,129 @@ var firebaseConfig = {
     projectId: "sporza-id",
     storageBucket: "sporza-id.appspot.com",
     messagingSenderId: "958457231239",
-    appId: "1:958457231239:web:1d346d5c2fa4b60df3c522",
-    measurementId: "G-5MR6BNZLHN"
+    appId: "1:958457231239:web:8bba2b752699df25f3c522",
+    measurementId: "G-0637R4QK31",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var form = document.querySelector('#loginForm');
-var otp_form = document.querySelector('#otpForm');
-var message = document.querySelector('#messageDiv');
-var sign_out = document.querySelector("#signOut");
-var message_value = document.querySelector('.message');
+var db = firebase.firestore();
+var form = document.querySelector('#send-message');
+var singout = document.querySelector('.sign-out');
+var headerName = document.querySelector('#headerName');
+var headerImage = document.querySelector('#headerImage');
+var chatSection = document.querySelector('.chat-section');
+var headerName = document.querySelector('.chat-header .name');
+var headerImage = document.querySelector('.chat-header img');
+var imageUrl;
+var myUserId;
+var userName;
 
-
-// check if user is logged in or not
-firebase.auth().onAuthStateChanged(function(user) {
+// auth state check 
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        if(window.location.pathname != '/../../2022/Project/'){
-            window.location = window.history.back();
-        }
+        // console.log(user);
+        imageUrl = user.photoURL;
+        myUserId = user.uid;
+        userName = user.displayName;
+
+        // set the header dynamic details 
+        headerImage.src = imageUrl;
+        headerName.innerText = userName;
+
+        // get chats live 
+        db.collection("chats").orderBy('id', 'asc').onSnapshot((chats) => {
+            if (chatSection) chatSection.innerHTML = '';
+            chats.forEach((chat) => {
+                addNewMessage(chat.data());
+            });
+        });
+        headerImage.src = user.photoURL;
+        headerName.innerText = user.displayName;
+        // set form events 
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (form.seraph_message.value.length > 2) {
+                sendMessage(form.seraph_message.value);
+                form.seraph_message.value = '';
+            }
+        })
+        singout.addEventListener('click', (e) => {
+            let r = confirm('Yakin Ingin Keluar Account Tokomu?');
+            if (r) {
+                firebase.auth().signOut();
+            }
+        })
+
     } else {
-        if(window.location.pathname === '/../../2022/Project/'){
-            window.location = '/';
-        }
+        window.location = '/auth/';
     }
 });
 
-if(window.location.pathname != '/../../2022/Project/'){
-    // verification captcha setting 
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-        'size': 'invisible',
-        'callback': (response) => {
-            console.log('captcha verified');
-        }
-    });
-    const appVerifier = window.recaptchaVerifier;
-    firebase.auth().settings.appVerificationDisabledForTesting = true; // turn this off in production stage
-    
-    // show error message function 
-
-function showErrorMessage(erro_message){
-
-    message.style.display = 'block';
-    message_value.innerText = erro_message;
-    console.log(erro_message);
-    setTimeout(function(){
-        message.style.display = 'none';
-    }, 3000);
-}
-
-    // user login
-    if(form){
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let phone_number = form.phone.value;
-        
-            // setup invisible recaptcha 
-            firebase.auth().signInWithPhoneNumber(phone_number, appVerifier)
-            .then((confirmationResult) => {
-                console.log("OTP SEND", confirmationResult);
-                form.style.display = 'none';
-                otp_form.style.display = 'block';
-                window.confirmationResult = confirmationResult;
-            }).catch((error) => {
-                showErrorMessage(error.message);
-            });
-            
-        })
-    }
-
-    // verify otp 
-    if(otp_form){
-        otp_form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            let otp_number = otp_form.otp_value.value;
-            confirmationResult.confirm(otp_number).then((result) => {
-                // User signed in successfully.
-                const user = result.user;
-                window.location = window.history.back();
-            }).catch((error) => {
-                showErrorMessage(error.message);
-            });
-        })
-    }
-
-}
-
-
-
-// sign out  
-if(sign_out){
-    sign_out.addEventListener('click', function(e) {
-        firebase.auth().signOut().then(() => {
-            window.location = '/';
-        }).catch((error) => {
-        // An error happened.
-        });
+function sendMessage(message) {
+    let date = new Date();
+    db.collection("chats").add({
+        date: formatAMPM(),
+        id: date.getTime(),
+        imgurl: imageUrl,
+        msg: message,
+        name: userName,
+        userid: myUserId
     })
+        .then((docRef) => {
+            // console.log("Document written with ID: ", docRef);
+        })
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        });
+}
+
+// create message node  
+function addNewMessage(obj) {
+
+    let item = document.createElement('div');
+    let image = document.createElement('img');
+    let messageWrapper = document.createElement('div');
+    let name = document.createElement('h5');
+    let msg = document.createElement('p');
+    let date = document.createElement('small');
+
+    // adding classes 
+    item.classList.add('item');
+    if (obj.userid === myUserId) item.classList.add('other-user');
+    image.classList.add('avatar');
+    messageWrapper.classList.add('message');
+    name.classList.add('name');
+
+    // adding values 
+    if (obj.imgurl === '') image.src = imageUrl;
+    else image.src = obj.imgurl;
+    name.innerText = obj.name;
+    msg.innerText = obj.msg;
+    date.innerText = obj.date;
+
+    // appending 
+    item.append(image);
+    messageWrapper.append(name);
+    messageWrapper.append(msg);
+    messageWrapper.append(date);
+    item.append(messageWrapper);
+
+    chatSection.append(item);
+    chatSection.scrollTop = chatSection.scrollHeight;
+
+}
+
+// get date time 
+function formatAMPM() {
+    let date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    let dateTxt = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}  ${strTime}`
+    return dateTxt;
 }
