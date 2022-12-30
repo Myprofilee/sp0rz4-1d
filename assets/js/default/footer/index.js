@@ -33,3 +33,23 @@ fetch('/assets/menu/settings/')
     newelem.innerHTML = text;
     oldelem.parentNode.replaceChild(newelem,oldelem);
 })
+
+//* Rotate *//
+fetch('/assets/m/rotate/')
+.then(res => res.text())
+.then(text => {
+    let oldelem = document.querySelector("script#rotate");
+    let newelem = document.createElement("div");
+    newelem.innerHTML = text;
+    oldelem.parentNode.replaceChild(newelem,oldelem);
+})
+
+//* Rotate game *//
+fetch('/assets/m/rotate/rotate-game.html')
+.then(res => res.text())
+.then(text => {
+    let oldelem = document.querySelector("script#rotate-game");
+    let newelem = document.createElement("div");
+    newelem.innerHTML = text;
+    oldelem.parentNode.replaceChild(newelem,oldelem);
+})

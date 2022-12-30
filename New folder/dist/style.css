@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes phone-left {
+  from {
+    left: 10px;
+    transform: rotate(0deg);
+  }
+  to {
+    left: -80px;
+    transform: rotate(-10deg);
+  }
+}
+@keyframes phone-right {
+  from {
+    right: 10px;
+    transform: rotate(0deg);
+  }
+  to {
+    right: -80px;
+    transform: rotate(10deg);
+  }
+}
+@keyframes cinEurLogo {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    top: 40%;
+    left: 30%;
+    opacity: 1;
+  }
+}
+@keyframes cinDolLogo {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    top: 40%;
+    left: 30%;
+    opacity: 1;
+  }
+}
+@keyframes boxAnimation {
+  from {
+    width: 0px;
+    height: 0px;
+  }
+  to {
+    width: 80%;
+    height: 40%;
+  }
+}
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 64px;
+}
+
+.animation-square {
+  position: relative;
+}
+
+.phone {
+  position: relative;
+  border: 8px solid black;
+  border-radius: 25px;
+}
+.phone__btn {
+  width: 12px;
+  background-color: black;
+  position: absolute;
+}
+.phone__btn--1 {
+  height: 30px;
+  top: 70px;
+  right: -13px;
+}
+.phone__btn--2 {
+  height: 60px;
+  top: 110px;
+  right: -13px;
+}
+.phone--front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 150px;
+  height: 350px;
+  background: white;
+}
+.phone--left {
+  width: 150px;
+  height: 300px;
+  z-index: -1;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  animation: phone-left 1s ease-out 0.9s 1 forwards;
+}
+.phone--right {
+  width: 150px;
+  height: 300px;
+  z-index: -1;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  animation: phone-right 1s ease-out 0.9s 1 forwards;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: black;
+  border-radius: 25px;
+  color: white;
+  position: relative;
+  animation: boxAnimation 0.6s linear 0s 1 forwards;
+}
+
+.euro {
+  border: 3px solid white;
+  border-radius: 50%;
+  padding: 8px 12px;
+  margin: 1px;
+  z-index: 1;
+  animation: cinEurLogo 1s linear 0s 1 forwards;
+}
+
+.dollar {
+  color: black;
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 50%;
+  animation: cinDolLogo 1s linear 0s 1 forwards;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 30px;
+}

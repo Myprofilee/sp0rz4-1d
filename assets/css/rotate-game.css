@@ -1,0 +1,85 @@
+.rotate-phone-please {
+    position: fixed;
+    bottom: calc(50% - 135px/2 - 69.5px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #3378ff;
+    font-family: 'TT Norms', sans-serif;
+}
+
+.phone {
+    display: inline-block;
+    width: 30px;
+    bottom: 24px;
+    height: 60px;
+    border: 2px solid #3378ff;
+    border-radius: 4px;
+    position: relative;
+}
+
+.phone:after {
+    content: '';
+    width: 100%;
+    border-bottom: 2px solid #3378ff;
+    position: absolute;
+    top: 4px;
+    left: 0;
+}
+
+.phone:before {
+    content: '';
+    width: 100%;
+    border-bottom: 2px solid #3378ff;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+}
+
+.phone {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: anim-rotate;
+    animation-duration: 3s;
+}
+
+@keyframes anim-rotate {
+
+    0%,
+    10% {
+        transform: rotate(0deg)
+    }
+
+    40%,
+    60% {
+        transform: rotate(90deg)
+    }
+
+    95%,
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+
+/* (A) WRONG ORIENTATION - SHOW MESSAGE HIDE CONTENT */
+@media only screen and (orientation:landscape) {
+    #turn {
+        display: none;
+    }
+
+    #container {
+        display: block;
+    }
+}
+
+/* (B) CORRECT ORIENTATION - SHOW CONTENT HIDE MESSAGE */
+@media only screen and (orientation:portrait) {
+    #turn {
+        display: block;
+    }
+
+    #container {
+        display: none;
+    }
+}
