@@ -1,53 +1,28 @@
-html {
-  background: #333;
-}
-
-.rotate-phone-please {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-}
-
-.phone {
-  display: inline-block;
-  width: 30px;
-  height: 60px;
-  border: 3px solid #fff;
-  border-radius: 5px;
-  position: relative;
-}
-
-.phone:after {
-  content:'';
-  width: 100%;
-  border-bottom: 3px solid #fff;
-  position: absolute;
-  top: 4px;
-  left: 0;
-}
-
-.phone:before {
-  content:'';
-  width: 100%;
-  border-bottom: 3px solid #fff;
-  position: absolute;
-  bottom: 6px;
-  left: 0;
-}
-
-.phone {
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-name: anim-rotate;
-  animation-duration: 2s;
-}
-
-@keyframes anim-rotate {
-  0%, 10% { transform: rotate(0deg) }
-  40%, 60% { transform: rotate(90deg) }
-  95%, 100% { transform: rotate(0deg) }
-}
+    #panel{
+      border: solid #6c757d 3px;
+      border-radius: 3px;
+      margin-top: 50px;
+      display: inline-block;
+      padding: 20px;
+      width: 30%;
+    }
+    #panel * {display: block; padding: 2px;}
+    #panel h2{color: #6c757d;}
+    #panel button{
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      margin-top: 5px;
+    }
+    #panel input{  
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: #6c757d;
+  }
+  #panel label{float: left;}
+  #panel svg{width: 20%;height: 20%;color: #6c757d;}

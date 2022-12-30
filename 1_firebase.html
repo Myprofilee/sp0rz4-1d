@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>samplefirebaseforweb</title>
+	<script src=
+"https://www.gstatic.com/firebasejs/3.7.4/firebase.js">
+</script>
+</head>
+
+<body>
+	<script src="/app.js"></script>
+	<button onclick="showUserProfile1()">
+	Show user Profile data using provider</button>
+	<div>
+		<button onclick="VerificationEmail()">
+		Sent Verification Email</button>
+	</div>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD0C2MlAYzNN7IDtlq5x7gfnefzxaVpxnY",
+    authDomain: "sporza-id.firebaseapp.com",
+    databaseURL: "https://sporza-id-default-rtdb.firebaseio.com",
+    projectId: "sporza-id",
+    storageBucket: "sporza-id.appspot.com",
+    messagingSenderId: "958457231239",
+    appId: "1:958457231239:web:8bba2b752699df25f3c522",
+    measurementId: "G-0637R4QK31",
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+
+function showUserProfile1() {
+	const user = firebase.auth().currentUser;
+
+	if (user !== null) {
+		user.providerData.forEach((profile) => {
+			console.log("Sign-in provider: " + profile.providerId);
+			console.log(" Provider-specific UID: " + profile.uid);
+			console.log(" Name: " + profile.displayName);
+			console.log(" Email: " + profile.email);
+			console.log(" Photo URL: " + profile.photoURL);
+		});
+	}
+}
+// Method to send the user verification mail
+function VerificationEmail() {
+	firebase.auth().currentUser.sendEmailVerification()
+		.then(() => {
+			// Email verification sent!
+			console.log('Email Verification sent! Check your mail box');
+			// ...
+		});
+}
+
+    </script>
+</body>
+
+</html>

@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#2196f3">
 
     <!-- Title -->
-    <title>Sporza Login</title>
+    <title>Sporza Register</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
@@ -26,11 +26,7 @@
 </head>
 
 <body>
-    <!-- Rotate -->
-    <script id="rotate"></script>
-    <!-- Rotate -->
-
-    <div class="page-wraper" id="container">
+    <div class="page-wraper">
 
         <!-- Preloader -->
         <div id="preloader">
@@ -44,40 +40,37 @@
             <!-- Banner -->
             <div class="banner-wrapper shape-1">
                 <div class="container inner-wrapper">
-                    <h2 class="dz-title">Sign In</h2>
-                    <p class="mb-0">Please sign in to your registered account</p>
+                    <h2 class="dz-title">Create an Account</h2>
+                    <p class="mb-0">Please fill registration form below</p>
                     <div class="message-wrapper" id="messageDiv">
-                    <h6 class="message"></h6></div>
+                        <h6 class="message"></h6>
+                    </div>
                 </div>
             </div>
             <!-- Banner End -->
 
             <div class="container">
                 <div class="account-area">
-                    <!-- Form -->
-                    <form id="loginForm" autocomplete="off">
+                    <form id="registerForm" autocomplete="off">
                         <div class="input-group">
-                            <input type="email" minlength="4" name="email" placeholder="User Name" class="form-control">
+                            <input type="email" minlength="4" autocomplete="off" placeholder="User Email"
+                                class="form-control" name="email" required>
                         </div>
                         <div class="input-group">
-                            <input type="password" placeholder="Password" name="password" id="dz-password" class="form-control be-0">
+                            <input type="password" minlength="4" placeholder="Password" class="form-control be-0"
+                                name="password" required>
                             <span class="input-group-text show-pass">
                                 <i class="fa fa-eye-slash"></i>
                                 <i class="fa fa-eye"></i>
                             </span>
                         </div>
-                        <a href="forgot-password.html" class="btn-link d-block text-center">Forgot your password?</a>
                         <div class="input-group">
-                            <button class="btn mt-2 btn-primary w-100 btn-rounded" id="signin-button">Login</button>
+                            <button class="btn mt-2 btn-primary w-100 btn-rounded">Sign Up</button>
                         </div>
+                        <p class="text-center">By tapping “Sign Up” you accept our <a href="javascript:void(0);"
+                                class="text-primary font-w700">terms</a> and <a href="javascript:void(0);"
+                                class="text-primary font-w700">condition</a></p>
                     </form>
-                    <div class="text-center p-tb20">
-                        <span class="saprate">Or sign in with</span>
-                    </div>
-                    <!-- Form -->
-                    <div class="social-btn-group text-center">
-                        <a class="social-btn login"><img src="/assets/images/social/google.png" alt="socila-image"></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -86,8 +79,7 @@
         <!-- Footer -->
         <footer class="footer fixed">
             <div class="container">
-                <a href="register/" class="btn btn-primary light btn-rounded text-primary d-block">Create
-                    account</a>
+                <a href="index.html" class="btn btn-primary light btn-rounded text-primary d-block">Login</a>
             </div>
         </footer>
         <!-- Footer End -->
@@ -173,12 +165,12 @@
         </div>
         <!-- Theme Color Settings End -->
     </div>
-    
+
     <!--Firebase-->
-	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
-	<script src="/assets/js/login/login-page.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+    <script src="/assets/js/login/login-page.js"></script>
     <!-- Script -->
     <script src="/assets/js/jquery.js"></script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
