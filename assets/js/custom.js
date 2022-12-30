@@ -241,7 +241,7 @@ var Jobie = function () {
 
 					if (e.keyCode === 8 || e.keyCode === 37) {
 						var prev = parent.find('input#' + $(this).data('previous'));
-
+``
 						if (prev.length) {
 							$(prev).select();
 						}
@@ -379,9 +379,6 @@ else if (hrs >= 18 && hrs <= 19)
 	greet = 'Selamat Petang';
 else if (hrs >= 19 && hrs <= 24)
 	greet = 'Selamat Malam';
-
-document.getElementById('welcome').innerHTML =
-	'<b>' + greet + '</b> ';
 
 	document.getElementById('welcome-2').innerHTML =
 	'<b>' + greet + '</b> ';

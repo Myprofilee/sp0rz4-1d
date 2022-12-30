@@ -32,7 +32,7 @@ var firebaseConfig = {
       link.href = link.textContent;
 
     } else {
-      window.location = "/";
+      window.location = "/auth/";
     }
   });
 
